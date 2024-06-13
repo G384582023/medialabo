@@ -1,0 +1,13 @@
+*{
+    background-color:black;
+    color:white;
+    font-family:serif;
+}
+h1{
+}
+a:link,a:visited{
+    color:rgb(0, 149, 255);
+}
+a:hover{
+    text-decoration:none;
+}
