@@ -1,12 +1,11 @@
 *{
-    background-color:black;
-    color:white;
+    background-color:white;
+    color:black;
     font-family:serif;
 }
-h1{
-}
-h2{
-    
+h1,h2{
+    color:white;
+    background: linear-gradient(to right, black,40%,white);
 }
 a:link,a:visited{
     color:rgb(0, 149, 255);
