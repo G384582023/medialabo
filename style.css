@@ -1,11 +1,42 @@
 *{
-    background-color:white;
     color:black;
     font-family:serif;
 }
-h1,h2{
-    color:white;
-    background: linear-gradient(to right, black,40%,white);
+body{
+    background-image:url(Brick-pattern-19.png);
+    background-attachment:fixed;
+}
+div#zentai{
+    display: grid;
+	grid-template-columns: 1fr ;
+	grid-auto-rows: 200px;
+	grid-gap:12px;
+	width: 1600px;
+}
+.a,.b,.c{
+    font-family: "YuGothic";
+    padding:10px;
+    background-color: #CCFFCC;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+.title{
+    color:red;
+}
+.sure{
+    padding:10px;
+    background-color: #EFEFEF;
+    border: 2px solid black;
+    border-radius: 10px;
+    height:500px;
+}
+h1{
+    font-size:45px;
+    text-align: center;
+    color:black;
+}
+h2{
+    color:black;
 }
 a:link,a:visited{
     color:rgb(0, 149, 255);
