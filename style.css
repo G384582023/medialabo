@@ -28,7 +28,10 @@ div#zentai{
     background-color: #EFEFEF;
     border: 2px solid black;
     border-radius: 10px;
-    height:500px;
+    height:475px;
+}
+span{
+    color:red;
 }
 h1{
     font-size:45px;
