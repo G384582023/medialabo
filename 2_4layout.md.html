@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<!-- saved from url=(0065)https://www.nishita-lab.org/web-contents/text/2css/2_4layout.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>2_4layout.md</title>
+
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="./2_4layout.md_files/mermaid.min.js"></script>
+</head>
+<body><header><p>情報メディア実験「Web コンテンツ作成」　第2回CSSによるWebページの装飾</p><h1 id="%E5%8F%82%E8%80%83%E8%B3%87%E6%96%99-%E3%83%AC%E3%82%A4%E3%82%A2%E3%82%A6%E3%83%88">参考資料: レイアウト</h1><p class="mdn"><cite class="mdn">参考資料: <a href="https://developer.mozilla.org/ja/docs/Learn/CSS/CSS_layout/Introduction" target="_blank">CSS レイアウト入門</a></cite></p></header><div id="main-content"><main>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<link href="./2_4layout.md_files/default.css" rel="stylesheet">
+<script src="./2_4layout.md_files/navall.js" defer=""></script>
+<script src="./2_4layout.md_files/nav.js" defer=""></script>
+<script src="./2_4layout.md_files/default.js" defer=""></script>
+
+<p></p>
+<p>CSS を使うとページ全体のレイアウトを大きく変更することが可能です．ここでは display プロパティが重要な役割を担います．</p>
+<h2 id="display-%E3%83%97%E3%83%AD%E3%83%91%E3%83%86%E3%82%A3">display プロパティ</h2>
+<p><code>display</code> プロパティによって要素の表示方法を大きく変更できます．display プロパティに設定可能な値（の一部）を次の表で示します．</p>
+<table>
+<thead>
+<tr>
+<th>プロパティ値</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>block</td>
+<td>ブロック要素のように表示</td>
+</tr>
+<tr>
+<td>inline</td>
+<td>インライン要素のように表示</td>
+</tr>
+<tr>
+<td>none</td>
+<td>要素を表示しない</td>
+</tr>
+<tr>
+<td>flex</td>
+<td>フレックスボックス（後述）</td>
+</tr>
+<tr>
+<td>grid</td>
+<td>グリッドレイアウト（後述）</td>
+</tr>
+</tbody>
+</table>
+<p><code>block</code> はブロック要素のように表示することを意味します．例えば，em 要素はインライン要素なので，em 要素の前後の文字と同じ行に表示されますが，em 要素に display:"block" 属性を設定すると，ブロック要素のように別行立てで表示します．</p>
+<p><code>inline</code> はインライン要素のように表示することを意味します．p 要素に対して display:"inline" 属性を設定すると，前後の文字と同じ行に表示されるようになります．</p>
+<p>以上の2つの設定は，ブロック要素とインライン要素の種類と，見た目をそれぞれ独立に設定できることを意味します．HTML を記述するときには見た目のことを気にせずに，文書の構造に基づいて記述しましょう．また，見た目は CSS で全ての設定を行いましょう．</p>
+<p><code>none</code> は要素を表示しないことを意味します．「表示しない要素なら，HTML や CSS にそもそも書かなくて良いのではないか？」と疑問に思うかもしれませんが，次回以降学習する JavaScript と組み合わせて，「ボタンを押したときに要素を表示/非表示にする」といった動きのあるページを作るのに使うことがあります．</p>
+<h2 id="%E3%83%95%E3%83%AC%E3%83%83%E3%82%AF%E3%82%B9%E3%83%9C%E3%83%83%E3%82%AF%E3%82%B9">フレックスボックス</h2>
+<p>一行の複数の要素を並べるときに，それぞれの要素の幅を細かく調整するのは手間がかかるものです．フレックスボックスは要素を一方向に並べる設定を簡単にしてくれる機能です．（といっても，細かな設定もできます．）</p>
+<p>ここでは，フレックスボックスの簡単な例を示して，解説します．</p>
+<p>なお，以下の HTML では <code>div</code> 要素を使っていますが，この要素は特に意味を持たないブロック要素です．HTML のdiv の部分は気にせずに，class 属性の設定と CSS における各クラスの設定に注目しましょう．</p>
+<pre class="hljs"><code><div>（HTML ファイル）
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"zentai"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"short"</span>&gt;</span>one<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"long"</span>&gt;</span>two<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"long"</span>&gt;</span>three<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"short"</span>&gt;</span>four<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"short"</span>&gt;</span>five<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div>（<span class="hljs-selector-tag">CSS</span> ファイル）
+
+<span class="hljs-selector-tag">div</span><span class="hljs-selector-class">.zentai</span> {
+    <span class="hljs-attribute">display</span>: flex;          <span class="hljs-comment">/* フレックスボックスにする */</span>
+    <span class="hljs-attribute">flex-direction</span>: row;    <span class="hljs-comment">/* 横向きに表示（column に変更すると縦向きに表示） */</span>
+
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">500px</span>;
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid gray;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">5px</span> <span class="hljs-number">5px</span> <span class="hljs-number">5px</span> <span class="hljs-number">0</span>;
+}
+
+<span class="hljs-selector-tag">div</span><span class="hljs-selector-class">.long</span> {
+    <span class="hljs-attribute">flex</span>: <span class="hljs-number">2</span>;                <span class="hljs-comment">/* 横幅2で表示 */</span>
+
+    <span class="hljs-attribute">background-color</span>: cyan;
+    <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">5px</span>;
+}
+
+<span class="hljs-selector-tag">div</span><span class="hljs-selector-class">.short</span> {
+    <span class="hljs-attribute">flex</span>: <span class="hljs-number">1</span>;                <span class="hljs-comment">/* 横幅1で表示 */</span>
+
+    <span class="hljs-attribute">background-color</span>: orange;
+    <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">5px</span>;
+}
+</div></code></pre>
+<p>この HTML と CSS により表示されるページは次のようなものです．<br>
+<img src="./2_4layout.md_files/flexbox-demo-sm.png" alt="フレックスボックスの表示例" class="sm"></p>
+<ul>
+<li>5つの子要素でちょうど横幅いっぱいになるように調整</li>
+<li>div.long 要素の横幅は，div.short 要素の2倍</li>
+</ul>
+<p><img src="./2_4layout.md_files/flexbox-instruction.png" alt="flexboxの解説" class="lg"></p>
+<h2 id="%E3%82%B0%E3%83%AA%E3%83%83%E3%83%89%E3%83%AC%E3%82%A4%E3%82%A2%E3%82%A6%E3%83%88">グリッドレイアウト</h2>
+<p>グリッドは，要素の表示領域を行と列に区切ってその中に子要素を配置するレイアウトです．これも HTML と CSS の例を示して説明します．</p>
+<pre class="hljs"><code><div>(HTML ファイル)
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"zentai"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"box"</span>&gt;</span>one<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"box"</span>&gt;</span>two<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"box"</span>&gt;</span>three<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"box"</span>&gt;</span>four<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"box"</span>&gt;</span>five<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<p>5つの div 要素には box クラスを指定していますが，要素の背景色を水色に設定するためだけに使っており，グリッドレイアウトとは関係ありません．</p>
+<pre class="hljs"><code><div>（<span class="hljs-selector-tag">CSS</span> ファイル）
+
+<span class="hljs-selector-tag">div</span><span class="hljs-selector-class">.zentai</span> {
+    <span class="hljs-attribute">display</span>: grid;                      <span class="hljs-comment">/* グリッドレイアウトにする*/</span>
+    <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-number">1</span>fr <span class="hljs-number">2</span>fr <span class="hljs-number">2</span>fr; <span class="hljs-comment">/* 3列にする．幅は 1:2:2 の比率*/</span>
+    <span class="hljs-attribute">grid-auto-rows</span>: <span class="hljs-number">100px</span> <span class="hljs-number">100px</span>;        <span class="hljs-comment">/* 高さは 100px */</span>
+    <span class="hljs-attribute">grid-gap</span>: <span class="hljs-number">10px</span>;                     <span class="hljs-comment">/* 隣り合う行（列）の間隔を 10px に*/</span>
+
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">500px</span>;
+}
+
+<span class="hljs-selector-tag">div</span><span class="hljs-selector-class">.box</span> {
+    <span class="hljs-attribute">background</span>: cyan;
+}
+</div></code></pre>
+<p>次のページが表示されます．<br>
+<img src="./2_4layout.md_files/gridlayout-demo-sm.png" alt="グリッドレイアウトのデモ" class="sm"></p>
+<p>この CSS は次の設定を意味します．</p>
+<ul>
+<li>2行3列のグリッドにする</li>
+<li>左上から5個の子要素を配置<br>
+<img src="./2_4layout.md_files/gridlayout-instruction.png" alt="グリッドレイアウトの解説" class="lg"></li>
+</ul>
+<p>グリッドレイアウトでは，各要素の表示位置を指定することによって，次のように複数のセルにまたがるような表示も可能です．</p>
+<p><img src="./2_4layout.md_files/gridlayout-demo2-sm.png" alt="グリッドレイアウトのデモ" class="sm"></p>
+<p class="info"><img src="./2_4layout.md_files/info.png" class="icon">また，このページの CSS の説明は割愛します．</p>
+<h2 id="%E3%83%95%E3%83%AD%E3%83%BC%E3%83%88">フロート</h2>
+<p>要素のフロート（浮動）は，通常のレイアウトとは独立に，右端や左端に要素を移動する機能です．</p>
+<pre class="hljs"><code><div>(HTML ファイル)
+
+<span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"sign"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"peace_sign.png"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>ピースマーク（英語: Peace symbol）は平和運動や...として知られる。<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>1958年に...で使われていた。（Wikipedia より）<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div>(<span class="hljs-selector-tag">CSS</span> ファイル)
+
+<span class="hljs-selector-tag">img</span><span class="hljs-selector-class">.sign</span> {
+    <span class="hljs-attribute">float</span>: right;   <span class="hljs-comment">/* 画像を右に浮かせる */</span>
+
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">10px</span> <span class="hljs-number">0</span> <span class="hljs-number">10px</span> <span class="hljs-number">10px</span>;
+}
+</div></code></pre>
+<p>次のページが表示されます．<br>
+<img src="./2_4layout.md_files/float-demo.png" alt="フロートのデモ" class="lg"></p>
+<ul>
+<li><code>float: right</code> に設定することによって，ページの右端に画像を浮かせています</li>
+<li>right の代わりに <code>left</code> に設定すると画像はページの左端に浮かせられます</li>
+</ul>
+<h2 id="%E4%BD%8D%E7%BD%AE%E6%8C%87%E5%AE%9A%E3%81%A8%E6%AE%B5%E7%B5%84%E3%81%BF">位置指定と段組み</h2>
+<p>ここまでフレックスボックス，グリッドレイアウト，フロートについて説明しましたが，それ以外にレイアウトを設定する方法を簡単に紹介します．</p>
+<h3 id="%E4%BD%8D%E7%BD%AE%E6%8C%87%E5%AE%9A">位置指定</h3>
+<p>要素の位置を細かく指定する方法が五種類あります．この方法を使うと，2つの要素を重ねて表示したり，ウィンドウ上に要素を固定させる（スクロールしても位置が変わらない）ことができます．</p>
+<h3 id="%E6%AE%B5%E7%B5%84%E3%81%BF">段組み</h3>
+<p>グリッドレイアウトに似た効果として，段組みがあります．例えば，2段組の場合は，左右二つに表示領域を縦に分けて要素を配置できます．</p>
+<h2 id="%E3%81%8A%E5%8B%A7%E3%82%81%E3%81%AE%E3%83%AC%E3%82%A4%E3%82%A2%E3%82%A6%E3%83%88%E8%A8%AD%E5%AE%9A">お勧めのレイアウト設定</h2>
+<ul>
+<li>ページ全体のレイアウトには，フレックスボックスやグリッドレイアウト，段組みがお勧めです</li>
+<li>フロートはページの中のごく一部について指定することをお勧めします．フロートを多用すると混乱しやすいです．</li>
+<li>位置指定はなるべく使わない方が良いです．具体的な数値で座標を指定することになるため，微調整に手間がかかります．CSS をたくさん記述することになるため，修正したくなるとさらに手間がかかります．</li>
+</ul>
+<p>1つのページについて CSS の設定をするときには次の順番に考えると良いです．</p>
+<ol>
+<li>まず，ページの全体レイアウトを考える</li>
+<li>CSS を記述して，body の子要素の表示位置を確認
+<ul>
+<li>このとき，要素の内容の表示は気にしない</li>
+</ul>
+</li>
+<li>前項が終わったら，配置した各要素の内容のレイアウトを順番に考える</li>
+</ol>
+<h2 id="%E5%8F%82%E8%80%83%E8%B3%87%E6%96%99">参考資料</h2>
+<p>例えば，グリッドレイアウトでページの見た目を作ろうと考えたとします．この資料ではグリッドレイアウトの詳細は掲載していませんので，細かい設定をどうしたら良いか困ってしまうでしょう．</p>
+<p>そこで，この資料に掲載したレイアウトのやり方それぞれについて MDN Docs の参考資料を以下に示します．各資料には情報が盛り沢山です．決してすべて読もうとしないで，自分がやりたいレイアウトについての資料だけ見るようにしてください．</p>
+<ul>
+<li><a href="https://developer.mozilla.org/ja/docs/Learn/CSS/CSS_layout/Flexbox" target="_blank">フレックスボックス</a></li>
+<li>グリッドレイアウトの<a href="https://developer.mozilla.org/ja/docs/Learn/CSS/CSS_layout/Introduction#grid_layout" target="_blank">紹介</a>，<a href="https://developer.mozilla.org/ja/docs/Learn/CSS/CSS_layout/Grids" target="_blank">詳しい説明</a></li>
+<li><a href="https://developer.mozilla.org/ja/docs/Learn/CSS/CSS_layout/Floats" target="_blank">フロート</a></li>
+<li>位置指定の<a href="https://developer.mozilla.org/ja/docs/Learn/CSS/CSS_layout/Introduction#positioning_techniques" target="_blank">紹介</a>，<a href="https://developer.mozilla.org/ja/docs/Learn/CSS/CSS_layout/Positioning" target="_blank">詳しい説明</a></li>
+<li><a href="https://developer.mozilla.org/ja/docs/Learn/CSS/CSS_layout/Multiple-column_Layout" target="_blank">段組み</a></li>
+</ul>
+
+
+
+</main><nav><div class="nav-content navhead"><p>このページの見出し</p><ul><li><a href="https://www.nishita-lab.org/web-contents/text/2css/2_4layout.html#display-%E3%83%97%E3%83%AD%E3%83%91%E3%83%86%E3%82%A3">display プロパティ</a></li><li><a href="https://www.nishita-lab.org/web-contents/text/2css/2_4layout.html#%E3%83%95%E3%83%AC%E3%83%83%E3%82%AF%E3%82%B9%E3%83%9C%E3%83%83%E3%82%AF%E3%82%B9">フレックスボックス</a></li><li><a href="https://www.nishita-lab.org/web-contents/text/2css/2_4layout.html#%E3%82%B0%E3%83%AA%E3%83%83%E3%83%89%E3%83%AC%E3%82%A4%E3%82%A2%E3%82%A6%E3%83%88">グリッドレイアウト</a></li><li><a href="https://www.nishita-lab.org/web-contents/text/2css/2_4layout.html#%E3%83%95%E3%83%AD%E3%83%BC%E3%83%88">フロート</a></li><li><a href="https://www.nishita-lab.org/web-contents/text/2css/2_4layout.html#%E4%BD%8D%E7%BD%AE%E6%8C%87%E5%AE%9A%E3%81%A8%E6%AE%B5%E7%B5%84%E3%81%BF">位置指定と段組み</a></li><li class="subsection"><a href="https://www.nishita-lab.org/web-contents/text/2css/2_4layout.html#%E4%BD%8D%E7%BD%AE%E6%8C%87%E5%AE%9A">位置指定</a></li><li class="subsection"><a href="https://www.nishita-lab.org/web-contents/text/2css/2_4layout.html#%E6%AE%B5%E7%B5%84%E3%81%BF">段組み</a></li><li><a href="https://www.nishita-lab.org/web-contents/text/2css/2_4layout.html#%E3%81%8A%E5%8B%A7%E3%82%81%E3%81%AE%E3%83%AC%E3%82%A4%E3%82%A2%E3%82%A6%E3%83%88%E8%A8%AD%E5%AE%9A">お勧めのレイアウト設定</a></li><li><a href="https://www.nishita-lab.org/web-contents/text/2css/2_4layout.html#%E5%8F%82%E8%80%83%E8%B3%87%E6%96%99">参考資料</a></li></ul></div><div class="nav-content navfile"><p>第2回CSSによるWebページの装飾: ページ一覧</p><ul><li><a href="https://www.nishita-lab.org/web-contents/text/2css/2_1css-intro.html">講義資料（1/5）: CSS による見た目の設定</a></li><li><a href="https://www.nishita-lab.org/web-contents/text/2css/2_2css-structure.html">講義資料（2/5）: CSS の全体像</a></li><li><a href="https://www.nishita-lab.org/web-contents/text/2css/2_2_5css-ex.html">講義資料（3/5）: 演習</a></li><li><a href="https://www.nishita-lab.org/web-contents/text/2css/2_6css-reference.html">講義資料（4/5）: CSSの参考資料</a></li><li><a href="https://www.nishita-lab.org/web-contents/text/2css/2_5css-debug.html">講義資料（5/5）: CSSのデバッグ</a></li><li><a href="https://www.nishita-lab.org/web-contents/text/2css/2_7task.html">課題</a></li><li><a href="https://www.nishita-lab.org/web-contents/text/2css/2_3box-model.html">参考資料: ボックスモデル</a></li><li class="current"><a href="https://www.nishita-lab.org/web-contents/text/2css/2_4layout.html">参考資料: レイアウト</a></li></ul></div><div class="nav-content navtext"><p>「Webコンテンツ作成」の資料一覧</p><ul><li><a href="https://www.nishita-lab.org/web-contents/text/0intro/0_1theme.html">第1回事前課題</a></li><li><a href="https://www.nishita-lab.org/web-contents/text/1html/1_0prelim_check.html">第1回講義: WWWとHTML</a></li><li><a href="https://www.nishita-lab.org/web-contents/text/1homework/1h_homework.html">第1回宿題</a></li><li class="current"><a href="https://www.nishita-lab.org/web-contents/text/2css/2_1css-intro.html">第2回講義: CSSによるWebページの装飾</a></li><li><a href="https://www.nishita-lab.org/web-contents/text/2homework/2h_homework.html">第2回宿題</a></li><li><a href="https://www.nishita-lab.org/web-contents/text/3javascript/3_1js-intro.html">第3回講義: JavaScriptの基本</a></li><li><a href="https://www.nishita-lab.org/web-contents/text/3homework/3h_homework.html">第3回宿題</a></li><li><a href="https://www.nishita-lab.org/web-contents/text/4dom/4_1dom-intro.html">第4回講義: DOMとJavaScript</a></li><li><a href="https://www.nishita-lab.org/web-contents/text/4homework/4h_homework.html">第4回宿題</a></li><li><a href="https://www.nishita-lab.org/web-contents/text/5event/5_1event-intro.html">第5回講義: イベント処理</a></li><li><a href="https://www.nishita-lab.org/web-contents/text/5homework/5h_homework.html">第5回宿題</a></li><li><a href="https://www.nishita-lab.org/web-contents/text/6project/6_1project.html">第6回 プロジェクト課題を完成させよう</a></li></ul></div></nav></div><footer><a href="https://www.nishita-lab.org/web-contents/text/2css/2_3box-model.html">前ページ「参考資料: ボックスモデル」 &lt;</a>　｜　</footer></body></html>
