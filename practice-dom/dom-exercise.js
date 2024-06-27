@@ -22,9 +22,9 @@ p.style.textEmphasis='sesame green';
 
 // 練習4-3 写真表作成プログラム
 let div=document.querySelector('div#phototable');
-let p1=document.createElement('p1');
-let p2=document.createElement('p2');
-let p3=document.createElement('p3');
+let p1=document.createElement('p');
+let p2=document.createElement('p');
+let p3=document.createElement('p');
 let img=document.createElement('img');
 let img2=document.createElement('img');
 let img3=document.createElement('img');
