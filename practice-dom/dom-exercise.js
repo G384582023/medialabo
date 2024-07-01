@@ -32,14 +32,47 @@ img.setAttribute('src','taro.png');
 img2.setAttribute('src','jiro.png');
 img3.setAttribute('src','hanako.png');
 p1.insertAdjacentElement('beforeend',img);
-p1.insertAdjacentElement('beforeend',img2);
 p2.insertAdjacentElement('beforeend',img2);
 p3.insertAdjacentElement('beforeend',img3);
 div.insertAdjacentElement('beforeend',p1);
 div.insertAdjacentElement('beforeend',p2);
 div.insertAdjacentElement('beforeend',p3);
 // 練習4-4 箇条書き削除プログラム
-
+let l=document.querySelectorAll('li');
+l[0].remove();
+l[1].remove();
+l[2].remove();
 
 // 練習4-5 箇条書き追加プログラム
+let ul=document.querySelector('ul#location');
+let li=document.createElement('li'); 
+ul.insertAdjacentElement('beforeend',li);
+li.textContent=data[0].name+'...緯度'+data[0].lat+',経度'+data[0].lng;
+let li1=document.createElement('li'); 
+ul.insertAdjacentElement('beforeend',li1);
+li1.textContent=data[1].name+'...緯度'+data[1].lat+',経度'+data[1].lng;
+let li2=document.createElement('li'); 
+ul.insertAdjacentElement('beforeend',li2);
+li2.textContent=data[2].name+'...緯度'+data[2].lat+',経度'+data[2].lng;
+let li3=document.createElement('li'); 
+ul.insertAdjacentElement('beforeend',li3);
+li3.textContent=data[3].name+'...緯度'+data[3].lat+',経度'+data[3].lng;
+let li4=document.createElement('li'); 
+ul.insertAdjacentElement('beforeend',li4);
+li4.textContent=data[4].name+'...緯度'+data[4].lat+',経度'+data[4].lng;
+let li5=document.createElement('li'); 
+ul.insertAdjacentElement('beforeend',li5);
+li5.textContent=data[5].name+'...緯度'+data[5].lat+',経度'+data[5].lng;
+let li6=document.createElement('li'); 
+ul.insertAdjacentElement('beforeend',li6);
+li6.textContent=data[6].name+'...緯度'+data[6].lat+',経度'+data[6].lng;
+let li7=document.createElement('li'); 
+ul.insertAdjacentElement('beforeend',li7);
+li7.textContent=data[7].name+'...緯度'+data[7].lat+',経度'+data[7].lng;
+let li8=document.createElement('li'); 
+ul.insertAdjacentElement('beforeend',li8);
+li8.textContent=data[8].name+'...緯度'+data[0].lat+',経度'+data[8].lng;
+let li9=document.createElement('li'); 
+ul.insertAdjacentElement('beforeend',li9);
+li9.textContent=data[9].name+'...緯度'+data[9].lat+',経度'+data[9].lng;
 
