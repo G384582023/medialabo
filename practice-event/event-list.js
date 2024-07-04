@@ -36,7 +36,7 @@ c9.addEventListener('keydown', changeColor);
 
 // cell10: キーボードのキーを離すと色が変わる
 let c10 = document.querySelector('#cell10');
-c10.addEventListener('', changeColor);
+c10.addEventListener('keyup', changeColor);
 
 function changeColor(event) {
 	// ランダムな RGB の色
