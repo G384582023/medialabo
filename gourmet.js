@@ -292,3 +292,12 @@ lu.insertAdjacentElement('beforeend', p17);
 let p18=document.createElement('p');
 p18.textContent='サブジャンル：'+data.results.shop[1].sub_genre.name;
 lu.insertAdjacentElement('beforeend', p18);
+
+let b = document.querySelector('#print');
+b.addEventListener('click', greeting);
+
+function greeting() {
+	let i = document.querySelector('input[name="kensaku"]');
+	let kensaku = i.value;
+	console.log('検索キー：'+kensaku);
+}
