@@ -199,6 +199,12 @@ let data = {
   }
 };
 
+//print(data)
+
+function print(data){
+
+
+
 /////////// 課題3-2 ここからプログラムを書こう
 console.log('検索結果1件目')
 console.log('名前：'+data.results.shop[0].name)
@@ -292,12 +298,117 @@ lu.insertAdjacentElement('beforeend', p17);
 let p18=document.createElement('p');
 p18.textContent='サブジャンル：'+data.results.shop[1].sub_genre.name;
 lu.insertAdjacentElement('beforeend', p18);
+} 
 
 let b = document.querySelector('#print');
 b.addEventListener('click', greeting);
+
 
 function greeting() {
 	let i = document.querySelector('input[name="kensaku"]');
 	let kensaku = i.value;
 	console.log('検索キー：'+kensaku);
+}   
+
+let d = document.querySelector('#print');
+d.addEventListener('click', sendRequest); 
+
+
+
+
+// 通信を開始する処理
+function sendRequest() {
+    // URL を設定
+    let i = document.querySelector('input[name="kensaku"]');
+	  let kensaku = i.value;
+    if(kensaku==='居酒屋'){
+      g='G001'
+    }
+    else if(kensaku==='ダイニングバー・バル'){
+      g='G002'
+    }
+    else if(kensaku==='創作料理'){
+      g='G003'
+    }
+    else if(kensaku==='和食'){
+      g='G004'
+    }
+    else if(kensaku==='洋食'){
+      g='G005'
+    }
+    else if(kensaku==='イタリアン・フレンチ'){
+      g='G006'
+    }
+    else if(kensaku==='中華'){
+      g='G007'
+    }
+    else if(kensaku==='焼肉・ホルモン'){
+      g='G008'
+    }
+    else if(kensaku==='アジア・エスニック料理'){
+      g='G009'
+    }
+    else if(kensaku==='各国料理'){
+      g='G010'
+    }
+    else if(kensaku==='カラオケ・パーティ'){
+      g='G011'
+    }
+    else if(kensaku==='バー・カクテル'){
+      g='G012'
+    }
+    else if(kensaku==='ラーメン'){
+      g='G013'
+    }
+    else if(kensaku==='カフェ・スイーツ'){
+      g='G014'
+    }
+    else if(kensaku==='その他グルメ'){
+      g='G015'
+    }
+    else if(kensaku==='お好み焼き・もんじゃ'){
+      g='G016'
+    }
+    else if(kensaku==='韓国料理'){
+      g='G017'
+    }
+
+
+    let url = "https://www.nishita-lab.org/web-contents/jsons/hotpepper/"+g+".json";
+
+    // 通信開始
+    axios.get(url)
+        .then(showResult)   // 通信成功
+        .catch(showError)   // 通信失敗
+        .then(finish);      // 通信の最後の処理
 }
+
+// 通信が成功した時の処理
+function showResult(resp) {
+    // サーバから送られてきたデータを出力
+    let data = resp.data;
+
+    // data が文字列型なら，オブジェクトに変換する
+    if (typeof data === 'string') {
+        data = JSON.parse(data);
+    }
+
+    // data をコンソールに出力
+    let p4 = document.querySelector('div#result');
+    p4.textContent = print(data); 
+    print(data);
+
+    // data.x を出力
+    console.log(data.x);
+}
+
+// 通信エラーが発生した時の処理
+function showError(err) {
+    console.log(err);
+}
+
+// 通信の最後にいつも実行する処理
+function finish() {
+    console.log('Ajax 通信が終わりました');
+}
+
