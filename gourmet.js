@@ -1,4 +1,4 @@
-let data = {
+/*let data = {
   "results": {
     "api_version": "1.26",
     "results_available": 52,
@@ -198,6 +198,7 @@ let data = {
     ]
   }
 };
+*/
 
 //print(data)
 
@@ -215,7 +216,7 @@ console.log('キャッチコピー：'+data.results.shop[0].catch)
 console.log('ジャンル：'+data.results.shop[0].genre.name)
 console.log('営業時間：'+data.results.shop[0].open)
 console.log('最寄駅：'+data.results.shop[0].station_name)
-console.log('サブジャンル：'+data.results.shop[0].sub_genre.name)
+//console.log('サブジャンル：'+data.results.shop[0].sub_genre.name)
 console.log('検索結果2件目')
 console.log('名前：'+data.results.shop[1].name)
 console.log('アクセス：'+data.results.shop[1].mobile_access)
@@ -225,7 +226,7 @@ console.log('キャッチコピー：'+data.results.shop[1].catch)
 console.log('ジャンル：'+data.results.shop[1].genre.name)
 console.log('営業時間：'+data.results.shop[1].open)
 console.log('最寄駅：'+data.results.shop[1].small_area.name)
-console.log('サブジャンル：'+data.results.shop[1].sub_genre.name)
+//console.log('サブジャンル：'+data.results.shop[1].sub_genre.name)
 ////////////////////
 let d=document.querySelector('div#result');
 let t=document.createElement('h1'); 
@@ -262,9 +263,9 @@ ul.insertAdjacentElement('beforeend', p6);
 let p7=document.createElement('p');
 p7.textContent='最寄駅：'+data.results.shop[0].station_name;
 ul.insertAdjacentElement('beforeend', p7);
-let p8=document.createElement('p');
-p8.textContent='サブジャンル：'+data.results.shop[0].sub_genre.name;
-ul.insertAdjacentElement('beforeend', p8);
+//let p8=document.createElement('p');
+//p8.textContent='サブジャンル：'+data.results.shop[0].sub_genre.name;
+//ul.insertAdjacentElement('beforeend', p8);
 let lu=document.createElement('ul');
 lu.setAttribute('class','b'); 
 d.insertAdjacentElement('beforeend', lu); 
@@ -296,8 +297,8 @@ let p17=document.createElement('p');
 p17.textContent='最寄駅：'+data.results.shop[1].small_area.name;
 lu.insertAdjacentElement('beforeend', p17);
 let p18=document.createElement('p');
-p18.textContent='サブジャンル：'+data.results.shop[1].sub_genre.name;
-lu.insertAdjacentElement('beforeend', p18);
+//p18.textContent='サブジャンル：'+data.results.shop[1].sub_genre.name;
+//lu.insertAdjacentElement('beforeend', p18);
 } 
 
 let b = document.querySelector('#print');
