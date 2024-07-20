@@ -325,9 +325,9 @@ function sendRequest() {
     if(kensaku==='居酒屋'){
       g='G001'
     }
-    else if(kensaku==='ダイニングバー・バル'){
+    /*else if(kensaku==='ダイニングバー・バル'){
       g='G002'
-    }
+    }*/
     else if(kensaku==='創作料理'){
       g='G003'
     }
@@ -364,9 +364,9 @@ function sendRequest() {
     else if(kensaku==='カフェ・スイーツ'){
       g='G014'
     }
-    else if(kensaku==='その他グルメ'){
+    /*else if(kensaku==='その他グルメ'){
       g='G015'
-    }
+    }*/
     else if(kensaku==='お好み焼き・もんじゃ'){
       g='G016'
     }
