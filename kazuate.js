@@ -22,15 +22,23 @@ function hantei() {
 
   // 課題3-1: 正解判定する
   kaisu=kaisu+1;
+  let b=document.querySelector('span#kaisu');
+  b.textContent=kaisu; 
   if(kaisu<4){
     if (kotae === yoso){
         console.log(kaisu+'回目の予想：'+yoso);
         console.log('正解です・おめでとう！');
-        kaisu=kaisu+3;
+        kaisu=kaisu+2;
+        let b=document.querySelector('p#result');
+        b.textContent=('正解です.おめでとう！');
+    }
+    else if(kaisu === 3){
+        console.log(kaisu+'回目の予想；'+yoso);
+        console.log('まちがい．残念でした答えは '+ kotae +' です．');
         let a=document.querySelector('span#kaisu');
         a.textContent=kaisu; 
         let b=document.querySelector('p#result');
-        b.textContent=('正解です.おめでとう！');
+        b.textContent=('まちがい．残念でした答えは '+ kotae +' です．');
     }
     else if(kotae < yoso){
         console.log(kaisu+'回目の予想；'+yoso);
