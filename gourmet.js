@@ -305,6 +305,7 @@ let b = document.querySelector('#print');
 b.addEventListener('click', greeting);
 
 
+
 function greeting() {
 	let i = document.querySelector('input[name="kensaku"]');
 	let kensaku = i.value;
@@ -313,6 +314,8 @@ function greeting() {
 
 let d = document.querySelector('#print');
 d.addEventListener('click', sendRequest); 
+
+
 
 
 
@@ -373,6 +376,11 @@ function sendRequest() {
     else if(kensaku==='韓国料理'){
       g='G017'
     }
+    else{
+      let p4 = document.querySelector('div#result');
+      p4.textContent = '検索結果はありません'; 
+      g=null
+    }
 
 
     let url = "https://www.nishita-lab.org/web-contents/jsons/hotpepper/"+g+".json";
@@ -396,7 +404,7 @@ function showResult(resp) {
 
     // data をコンソールに出力
     let p4 = document.querySelector('div#result');
-    p4.textContent = print(data); 
+    p4.textContent = null; 
     print(data);
 
     // data.x を出力
